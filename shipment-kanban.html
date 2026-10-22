@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>e-PoD & Consignment Dispatch Kanban | ColdFleet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+  <!-- ColdFleet Sidebar -->
+  <aside class="cold-sidebar" id="coldSidebar">
+    <div class="brand-box">
+      <div class="brand-icon"><i class="bi bi-snow2"></i></div>
+      <div class="d-flex flex-column lh-1">
+        <span class="fs-5 fw-bold text-white tracking-wide">COLD<span style="color: #38bdf8;">FLEET</span></span>
+        <small class="text-secondary" style="font-size: 0.65rem;">Cold-Chain Fleet Operating System</small>
+      </div>
+    </div>
+    <div class="px-3 pt-3 pb-1 text-uppercase text-secondary fw-bold" style="font-size: 0.65rem; letter-spacing: 0.08em;">Fleet Monitoring</div>
+    <nav class="nav flex-column">
+      <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Fleet Telemetry</span></a>
+      <a class="nav-link" href="index.html"><i class="bi bi-geo-alt"></i><span>GPS Live Route</span></a>
+      <a class="nav-link active" href="shipment-kanban.html"><i class="bi bi-box-seam"></i><span>e-PoD & Dispatch</span></a>
+    </nav>
+    <div class="px-3 pt-3 pb-1 text-uppercase text-secondary fw-bold" style="font-size: 0.65rem; letter-spacing: 0.08em;">Public Portal</div>
+    <nav class="nav flex-column">
+      <a class="nav-link" href="tracking-portal.html"><i class="bi bi-search"></i><span>Pelacak Resi Publik</span></a>
+	  <a class="nav-link" href="../Documentation/index.html"><i class="bi bi-journal-code"></i><span>Dokumentasi</span></a>
+    </nav>
+  </aside>
+
+  <!-- Topbar -->
+  <header class="cold-topbar">
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggle"><i class="bi bi-list fs-5"></i></button>
+      <h1 class="h6 fw-bold mb-0">Dispatch & Electronic Proof of Delivery (e-PoD)</h1>
+    </div>
+    <button class="btn btn-sm text-white fw-bold px-3" style="background: #0284c7;" onclick="alert('Formulir Dispatch Baru Dibuka.');">
+      <i class="bi bi-plus-lg me-1"></i> Rilis Surat Jalan (AWB)
+    </button>
+  </header>
+
+  <!-- Content -->
+  <main class="cold-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h1 class="h4 fw-bold mb-1">Alur Dispatch & Verifikasi Suhu e-PoD</h1>
+        <p class="text-muted small mb-0">Pantau proses pengiriman dari pre-cooling gudang, perjalanan, hingga tanda tangan digital penerima.</p>
+      </div>
+    </div>
+
+    <!-- 4 Kanban Columns -->
+    <div class="row g-3">
+      <!-- Col 1 -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-white rounded border h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold small text-secondary">1. PRE-COOLING BOX</span>
+            <span class="badge bg-secondary">2</span>
+          </div>
+          <div class="p-3 mb-2 rounded border bg-light">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="badge bg-primary-subtle text-primary">AWB-8901</span>
+              <small class="text-muted">Target -20°C</small>
+            </div>
+            <strong class="d-block mb-1">Vaksin Campak (800 Vial)</strong>
+            <small class="text-muted d-block mb-2">Truk TRK-809 • Gudang Marunda</small>
+            <span class="temp-badge deep-frozen">-19.5°C (Stabilising)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-white rounded border h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold small text-primary">2. IN-TRANSIT (ON-ROUTE)</span>
+            <span class="badge bg-primary">1</span>
+          </div>
+          <div class="p-3 mb-2 rounded border bg-light" style="border-left: 4px solid #0284c7 !important;">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="badge bg-info-subtle text-info">AWB-8872</span>
+              <small class="text-muted">Suhu OK</small>
+            </div>
+            <strong class="d-block mb-1">Frozen Beef Cut (2.5 Ton)</strong>
+            <small class="text-muted d-block mb-2">Truk TRK-801 • Tol Cipularang</small>
+            <span class="temp-badge deep-frozen">-21.4°C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-white rounded border h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold small text-warning">3. UNLOADING AT STORE</span>
+            <span class="badge bg-warning text-dark">1</span>
+          </div>
+          <div class="p-3 mb-2 rounded border bg-light" style="border-left: 4px solid #f59e0b !important;">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="badge bg-warning-subtle text-warning">AWB-8850</span>
+              <small class="text-warning fw-bold">Pintu Terbuka</small>
+            </div>
+            <strong class="d-block mb-1">Fresh Salmon Fillet</strong>
+            <small class="text-muted d-block mb-2">Truk TRK-805 • Grand Lucky SCBD</small>
+            <span class="temp-badge warning">+6.1°C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-white rounded border h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold small text-success">4. e-PoD COMPLETED</span>
+            <span class="badge bg-success">1</span>
+          </div>
+          <div class="p-3 mb-2 rounded border bg-light" style="border-left: 4px solid #10b981 !important;">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="badge bg-success-subtle text-success">AWB-8819</span>
+              <small class="text-success fw-bold">Signed & Cleared</small>
+            </div>
+            <strong class="d-block mb-1">Es Krim Haagen Dazs</strong>
+            <small class="text-muted d-block mb-2">Diterima: Bpk. Budi (Pukul 13:10)</small>
+            <span class="temp-badge deep-frozen">Log Suhu Lolos Audit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
